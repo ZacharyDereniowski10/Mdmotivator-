@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pillAr.iO/mdmotivator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+  <style>
+    body {{ font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #222; }}
+    header {{ background-color: #ffffff; padding: 2rem; text-align: center; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }}
+    header h1 {{ font-size: 2rem; margin: 0; font-weight: 800; color: #3b3b3b; }}
+    .hero {{ display: flex; flex-direction: column; align-items: center; padding: 4rem 2rem; background: #eef1f7; text-align: center; }}
+    .hero h2 {{ font-size: 2rem; margin-bottom: 1rem; }}
+    .hero p {{ max-width: 600px; margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.6; }}
+    .cta-button {{ background: #4f46e5; color: white; padding: 0.75rem 1.5rem; font-size: 1rem; font-weight: 600; border: none; border-radius: 8px; cursor: pointer; transition: background 0.3s; }}
+    .cta-button:hover {{ background: #3730a3; }}
+    .media-section {{ padding: 3rem 2rem; text-align: center; }}
+    .media-section img, .media-section video {{ max-width: 100%; border-radius: 12px; margin: 1rem 0; }}
+    .donate-section {{ padding: 3rem 2rem; text-align: center; }}
+    .crypto-section {{ margin-top: 2rem; background-color: #ffffff; padding: 2rem; border-radius: 12px; max-width: 600px; margin-left: auto; margin-right: auto; }}
+    .crypto-wallet {{ font-family: monospace; background: #f1f1f1; padding: 1rem; border-radius: 8px; word-wrap: break-word; }}
+    .copy-button {{ margin-top: 0.5rem; background-color: #4f46e5; color: white; padding: 0.3rem 1rem; font-size: 0.9rem; border: none; border-radius: 6px; cursor: pointer; }}
+    .copy-button:hover {{ background-color: #3730a3; }}
+    .crypto-qr {{ margin-top: 1rem; }}
+    .wallet-connect {{ margin-top: 2rem; }}
+    .wallet-button {{ background-color: #16a34a; color: white; padding: 0.75rem 1.5rem; font-size: 1rem; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; }}
+    .wallet-button:hover {{ background-color: #15803d; }}
+    footer {{ text-align: center; padding: 2rem; font-size: 0.9rem; color: #666; }}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>pillAr.iO/mdmotivator</h1>
+  </header>
+
+  <section class="hero">
+    <h2>Daily Motivation Delivered</h2>
+    <p>Welcome to your personalized source of inspiration. Start your day with uplifting messages, reflections, and a growing community that values kindness, healing, and hope.</p>
+    <button class="cta-button">Join the Movement</button>
+  </section>
+
+  <section class="media-section">
+    <h2>Get Inspired</h2>
+    <img src="https://images.unsplash.com/photo-1515734674582-29010bb37906?auto=format&fit=crop&w=800&q=80" alt="Motivational Image" />
+    <video controls><source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+  </section>
+
+  <section class="donate-section">
+    <h2>Support Our Mission</h2>
+    <div class="crypto-section">
+      <p><strong>Bitcoin (BTC):</strong></p>
+      <div class="crypto-wallet" id="btc-wallet">bc1qp06py8r8c5we2ls8rp0nng0szjkxtz8hmanz2l</div>
+      <button class="copy-button" onclick="copyToClipboard('btc-wallet')">Copy BTC Address</button>
+      <div class="crypto-qr"><img src="https://api.qrserver.com/v1/create-qr-code/?data=bc1qp06py8r8c5we2ls8rp0nng0szjkxtz8hmanz2l&size=150x150" alt="BTC QR" /></div>
+
+      <p><strong>Ethereum (ETH):</strong></p>
+      <div class="crypto-wallet" id="eth-wallet">0x6Cd569C139371cC921f0Be929c54415162dBA5F8</div>
+      <button class="copy-button" onclick="copyToClipboard('eth-wallet')">Copy ETH Address</button>
+      <div class="crypto-qr"><img src="https://api.qrserver.com/v1/create-qr-code/?data=0x6Cd569C139371cC921f0Be929c54415162dBA5F8&size=150x150" alt="ETH QR" /></div>
+
+      <p><strong>Tether (USDT - ERC20):</strong></p>
+      <div class="crypto-wallet" id="usdt-wallet">0x6Cd569C139371cC921f0Be929c54415162dBA5F8</div>
+      <button class="copy-button" onclick="copyToClipboard('usdt-wallet')">Copy USDT ERC20 Address</button>
+      <div class="crypto-qr"><img src="https://api.qrserver.com/v1/create-qr-code/?data=0x6Cd569C139371cC921f0Be929c54415162dBA5F8&size=150x150" alt="USDT QR" /></div>
+
+      <p><strong>Tether (USDT - TRC20):</strong></p>
+      <div class="crypto-wallet" id="usdt-trc-wallet">TQBB2M1yxsXSFSFd2gdJGdNDGtbqUkoUUU</div>
+      <button class="copy-button" onclick="copyToClipboard('usdt-trc-wallet')">Copy USDT TRC20 Address</button>
+      <div class="crypto-qr"><img src="https://api.qrserver.com/v1/create-qr-code/?data=TQBB2M1yxsXSFSFd2gdJGdNDGtbqUkoUUU&size=150x150" alt="USDT TRC20 QR" /></div>
+
+      <div class="wallet-connect">
+        <button class="wallet-button" onclick="connectWallet()">Connect Wallet</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>&copy; 2025 pillAr.iO/mdmotivator. All rights reserved.</footer>
+
+  <script>
+    function copyToClipboard(id) {{
+      const el = document.getElementById(id);
+      navigator.clipboard.writeText(el.innerText).then(() => {{
+        alert('Wallet address copied to clipboard');
+      }});
+    }}
+
+    async function connectWallet() {{
+      if (typeof window.ethereum !== 'undefined') {{
+        try {{
+          const accounts = await window.ethereum.request({{ method: 'eth_requestAccounts' }});
+          alert('Wallet connected successfully');
+        }} catch (error) {{
+          alert('Connection rejected.');
+        }}
+      }} else {{
+        alert('MetaMask is not installed.');
+      }}
+    }}
+  </script>
+</body>
+</html>
